@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Cadastro de Produto</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputText value="nome" />
+			<h:inputText value="#{produtosView.produto.nome}" />
+			<h:outputText value="descricao" />
+			<h:inputText value="#{produtosView.produto.descricao}" />
+			<h:outputText value="valor" />
+			<h:inputText value="#{produtosView.produto.valor}" />
+			<h:commandButton value="Submit" action="#{produtosView.adicionar}" />
+		</h:panelGrid>
+	</h:form>
+
+	<h:dataTable var="prod" value="#{produtosView.produtos}">
+		<h:column headerText="Nome">
+			<h:outputText value="#{prod.nome}" />
+		</h:column>
+		<h:column headerText="Descrição">
+			<h:outputText value="#{prod.descricao}" />
+		</h:column>
+		<h:column headerText="Valor">
+			<h:outputText value="#{prod.valor}" />
+		</h:column>
+	</h:dataTable>
+</h:body>
+</html>
